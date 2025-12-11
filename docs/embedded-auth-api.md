@@ -11,8 +11,8 @@ EMBEDDED_AUTH_ORIGINS=['http://localhost:3000']
 Embedded Auth also respects your broader server configuration, so be sure to disable any unwanted or unsupported features there.
 
 ## Detailed Documentation
-For more information, see the [Embedded Auth API Swagger](https://auth-server.valuemelody.com/api/v1/embedded-swagger).
+For more information, see the [Embedded Auth API Swagger](https://auth-server.ziyankhan.com/api/v1/embedded-swagger).
 
 ## Example
 A bare-bones example in React is available here
-[embedded-auth-example](https://github.com/ValueMelody/melody-auth-examples/tree/main/embedded-auth)
+[embedded-auth-example](https://github.com/ziyankhan/melody-auth-examples/tree/main/embedded-auth)

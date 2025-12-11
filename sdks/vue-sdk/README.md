@@ -9,4 +9,4 @@ npm install @melody-auth/vue --save
 ```
 
 ## Detailed Documentation
-For more detailed information, please see [Detailed Documentation](https://auth.valuemelody.com/vue-sdk.html).
+For more detailed information, please see [Detailed Documentation](https://auth.ziyankhan.com/vue-sdk.html).

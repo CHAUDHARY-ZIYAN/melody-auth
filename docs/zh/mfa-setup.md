@@ -60,7 +60,7 @@ Recovery codes 允许用户在忘记密码或无法完成 MFA 时重新获得访
 - S2S API：以编程方式更新应用的 MFA 配置。
 
 当不同应用需要不同的安全等级时（例如，内部管理应用需要更严格的 MFA）非常有用。然而，这项设置与 ENFORCE_ONE_MFA_ENROLLMENT 设置冲突，因此你需要仔细考虑其影响。
-![App-level MFA](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/app_level_mfa.jpg)
+![App-level MFA](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/app_level_mfa.jpg)
 
 ## 相关 policy（快捷方式）
 

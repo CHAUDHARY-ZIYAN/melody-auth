@@ -37,7 +37,7 @@ const Layout = ({
         </section>
         <a
           target='__blank'
-          href='https://github.com/ValueMelody/melody-auth'
+          href='https://github.com/ziyankhan/melody-auth'
           className='text-sm mt-2'
         >
           {layout.poweredByAuth[locale]}

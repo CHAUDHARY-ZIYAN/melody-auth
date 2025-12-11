@@ -1,6 +1,6 @@
 import {
   KeyboardEvent, ClipboardEvent, useRef,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import FieldLabel from './FieldLabel'
 import FieldError from './FieldError'
 

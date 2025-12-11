@@ -18,7 +18,7 @@ export default defineUserConfig({
   description: 'Effortless OAuth and Authentication, Built for Flexibility and Control.',
 
   theme: defaultTheme({
-    logo: 'https://valuemelody.com/logo.svg',
+    logo: 'https://ziyankhan.com/logo.svg',
     locales: {
       '/': {
         lang: 'en-US',
@@ -114,7 +114,7 @@ export default defineUserConfig({
                   },
                   {
                     text: 'S2S API Swagger',
-                    link: 'https://auth-server.valuemelody.com/api/v1/swagger',
+                    link: 'https://auth-server.ziyankhan.com/api/v1/swagger',
                   },
                   {
                     text: 'Embedded Auth API Setup',
@@ -122,7 +122,7 @@ export default defineUserConfig({
                   },
                   {
                     text: 'Embedded Auth API Swagger',
-                    link: 'https://auth-server.valuemelody.com/api/v1/embedded-swagger',
+                    link: 'https://auth-server.ziyankhan.com/api/v1/embedded-swagger',
                   },
                 ],
               },
@@ -219,7 +219,7 @@ export default defineUserConfig({
                   },
                   {
                     text: '服务间认证 API Swagger',
-                    link: 'https://auth-server.valuemelody.com/api/v1/swagger',
+                    link: 'https://auth-server.ziyankhan.com/api/v1/swagger',
                   },
                   {
                     text: '嵌入式认证 API 设置',
@@ -227,7 +227,7 @@ export default defineUserConfig({
                   },
                   {
                     text: '嵌入式认证 API Swagger',
-                    link: 'https://auth-server.valuemelody.com/api/v1/embedded-swagger',
+                    link: 'https://auth-server.ziyankhan.com/api/v1/embedded-swagger',
                   },
                 ],
               },

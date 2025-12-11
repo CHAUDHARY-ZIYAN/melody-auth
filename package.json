@@ -3,8 +3,8 @@
   "version": "1.3.7",
   "description": "A turnkey OAuth & authentication system.",
   "license": "MIT",
-  "author": "Baozier",
-  "repository": "https://github.com/ValueMelody/melody-auth",
+  "author": "Ziyan Khan",
+  "repository": "https://github.com/ziyankhan/melody-auth",
   "scripts": {
     "lint:check": "eslint ./ --ext .ts,.tsx,.js,.cjs",
     "lint:fix": "eslint ./ --fix --ext .ts,.tsx,.js,.cjs",

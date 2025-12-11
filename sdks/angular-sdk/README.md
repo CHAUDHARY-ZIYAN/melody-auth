@@ -9,4 +9,4 @@ npm install @melody-auth/angular --save
 ```
 
 ## Detailed Documentation
-For more detailed information, please see [Detailed Documentation](https://auth.valuemelody.com/angular-sdk.html).
+For more detailed information, please see [Detailed Documentation](https://auth.ziyankhan.com/angular-sdk.html).

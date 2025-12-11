@@ -1,4 +1,4 @@
-import { CSSProperties } from 'hono/jsx'
+import { CSSProperties } from 'hono/jsx/dom'
 
 export interface FieldInputProps {
   className?: string;

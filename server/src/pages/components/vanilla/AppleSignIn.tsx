@@ -1,6 +1,6 @@
 import {
   useEffect, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import {
   typeConfig, routeConfig, variableConfig,
 } from 'configs'

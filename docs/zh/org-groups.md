@@ -35,7 +35,7 @@
 可以在管理面板的用户详情页面将用户分配到分组。系统通过关联表维护这种关系，从而支持：
 - 每个分组包含多个用户
 - 每个用户属于多个分组  
-![用户组织分组](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/user_org_groups.jpg)
+![用户组织分组](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/user_org_groups.jpg)
 
 #### 分组筛选
 在管理面板中，管理员可以通过分组筛选用户列表，仅查看属于特定分组的用户。
@@ -49,7 +49,7 @@
 3. **创建新分组**：点击 “Create an org group” 按钮
 4. **编辑分组**：点击分组徽章上的编辑图标
 5. **删除分组**：点击分组徽章上的删除图标  
-![组织分组管理](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/org_group_management.jpg)
+![组织分组管理](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/org_group_management.jpg)
 
 ## S2S API 集成
 

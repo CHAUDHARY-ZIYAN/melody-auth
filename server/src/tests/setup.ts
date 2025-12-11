@@ -19,7 +19,7 @@ global.process.env = {
   ...config.vars,
   AUTH_SERVER_URL: 'http://localhost:8787',
   SENDGRID_API_KEY: 'abc',
-  SENDGRID_SENDER_ADDRESS: 'app@valuemelody.com',
+  SENDGRID_SENDER_ADDRESS: 'app@example.com',
   ENVIRONMENT: 'prod',
   DEV_EMAIL_RECEIVER: 'dev@email.com',
   DEV_SMS_RECEIVER: '+14161231234',

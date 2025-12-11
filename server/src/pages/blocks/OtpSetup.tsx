@@ -1,4 +1,4 @@
-import { useState } from 'hono/jsx'
+import { useState } from 'hono/jsx/dom'
 import {
   CodeInput, ViewTitle, SubmitError, PrimaryButton,
 } from 'pages/components'

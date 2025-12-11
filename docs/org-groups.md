@@ -34,7 +34,7 @@ Groups are created within the context of an organization and must have a unique 
 Users can be assigned to groups through the admin panel from user details page. The system maintains the relationship through the junction table, allowing for:
 - Multiple users per group
 - Multiple groups per user  
-![User Org Groups](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/user_org_groups.jpg)
+![User Org Groups](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/user_org_groups.jpg)
 
 #### Group Filtering
 In the admin panel, administrators can filter the user list by group to view only users belonging to a specific group.
@@ -48,7 +48,7 @@ In the admin panel, administrators can filter the user list by group to view onl
 3. **Create New Group**: Click the "Create an org group" button
 4. **Edit Group**: Click the edit icon on any group badge
 5. **Delete Group**: Click the delete icon on any group badge  
-![Org Groups Management](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/org_group_management.jpg)
+![Org Groups Management](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/org_group_management.jpg)
 
 ## S2S API Integration
 

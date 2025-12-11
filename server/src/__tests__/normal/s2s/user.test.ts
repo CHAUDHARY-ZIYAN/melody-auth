@@ -1548,7 +1548,7 @@ describe(
         expect(code).toBeFalsy()
         global.fetch = fetchMock
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
       },
     )
 

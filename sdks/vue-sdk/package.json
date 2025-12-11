@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ValueMelody/melody-auth.git"
+    "url": "git+https://github.com/ziyankhan/melody-auth.git"
   },
   "license": "MIT",
   "publishConfig": {

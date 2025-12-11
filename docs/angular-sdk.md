@@ -445,4 +445,4 @@ export class AuthActionsComponent {
 
 ## Example app
 
-See the minimal Angular example using the Angular SDK: `https://github.com/ValueMelody/melody-auth-examples/tree/main/angular-example`.
+See the minimal Angular example using the Angular SDK: `https://github.com/ziyankhan/melody-auth-examples/tree/main/angular-example`.

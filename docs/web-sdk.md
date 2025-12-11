@@ -153,4 +153,4 @@ await logout(
 
 ## Example app
 
-See the minimal Vite example using the Web SDK: `https://github.com/ValueMelody/melody-auth-examples/tree/main/vite-web-example`.
+See the minimal Vite example using the Web SDK: `https://github.com/ziyankhan/melody-auth-examples/tree/main/vite-web-example`.

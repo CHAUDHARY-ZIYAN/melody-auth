@@ -57,9 +57,9 @@ describe(
       'should send reset code by Sendgrid',
       async () => {
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -146,9 +146,9 @@ describe(
         process.env.SENDGRID_API_KEY = ''
         process.env.SENDGRID_SENDER_ADDRESS = ''
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -167,7 +167,7 @@ describe(
 
         const callArgs = mockFetch.mock.calls[0] as any[]
         const body = (callArgs[1] as unknown as { body: FormData }).body
-        expect(callArgs[0]).toBe('https://api.mailgun.net/v3/valuemelody.com/messages')
+        expect(callArgs[0]).toBe('https://api.mailgun.net/v3/example.com/messages')
         expect(body.get('html')).toContain(code)
         expect(body.get('to')).toContain('test@email.com')
 
@@ -181,7 +181,7 @@ describe(
         process.env.BREVO_API_KEY = ''
         process.env.BREVO_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
       },
     )
 
@@ -191,9 +191,9 @@ describe(
         process.env.SENDGRID_API_KEY = ''
         process.env.SENDGRID_SENDER_ADDRESS = ''
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = true as unknown as string
 
         const mockFetch = emailResponseMock
@@ -212,7 +212,7 @@ describe(
         process.env.MAILGUN_API_KEY = ''
         process.env.MAILGUN_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
         process.env.BREVO_API_KEY = ''
         process.env.BREVO_SENDER_ADDRESS = ''
         process.env.ENABLE_EMAIL_LOG = false as unknown as string
@@ -225,7 +225,7 @@ describe(
         process.env.SENDGRID_API_KEY = ''
         process.env.SENDGRID_SENDER_ADDRESS = ''
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -256,7 +256,7 @@ describe(
         process.env.BREVO_API_KEY = ''
         process.env.BREVO_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
       },
     )
 
@@ -266,7 +266,7 @@ describe(
         process.env.SENDGRID_API_KEY = ''
         process.env.SENDGRID_SENDER_ADDRESS = ''
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = true as unknown as string
 
         const mockFetch = emailResponseMock
@@ -285,7 +285,7 @@ describe(
         process.env.BREVO_API_KEY = ''
         process.env.BREVO_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = false as unknown as string
       },
     )
@@ -300,7 +300,7 @@ describe(
         process.env.BREVO_API_KEY = ''
         process.env.BREVO_SENDER_ADDRESS = ''
         process.env.RESEND_API_KEY = 're_2232323'
-        process.env.RESEND_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.RESEND_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -335,7 +335,7 @@ describe(
         process.env.RESEND_API_KEY = ''
         process.env.RESEND_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
       },
     )
 
@@ -347,7 +347,7 @@ describe(
         process.env.BREVO_API_KEY = ''
         process.env.BREVO_SENDER_ADDRESS = ''
         process.env.RESEND_API_KEY = 're_2232323'
-        process.env.RESEND_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.RESEND_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = true as unknown as string
 
         const mockFetch = emailResponseMock
@@ -368,7 +368,7 @@ describe(
         process.env.RESEND_API_KEY = ''
         process.env.RESEND_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = false as unknown as string
       },
     )
@@ -379,7 +379,7 @@ describe(
         process.env.SENDGRID_API_KEY = ''
         process.env.SENDGRID_SENDER_ADDRESS = ''
         process.env.POSTMARK_API_KEY = 'abc'
-        process.env.POSTMARK_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.POSTMARK_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -408,7 +408,7 @@ describe(
         global.fetch = fetchMock
 
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
         process.env.POSTMARK_API_KEY = ''
         process.env.POSTMARK_SENDER_ADDRESS = ''
       },
@@ -420,7 +420,7 @@ describe(
         process.env.SENDGRID_API_KEY = ''
         process.env.SENDGRID_SENDER_ADDRESS = ''
         process.env.POSTMARK_API_KEY = 'abc'
-        process.env.POSTMARK_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.POSTMARK_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = true as unknown as string
 
         const mockFetch = emailResponseMock
@@ -439,7 +439,7 @@ describe(
         process.env.POSTMARK_API_KEY = ''
         process.env.POSTMARK_SENDER_ADDRESS = ''
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
         process.env.ENABLE_EMAIL_LOG = false as unknown as string
       },
     )
@@ -448,9 +448,9 @@ describe(
       'could send reset code by smtp',
       async () => {
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
 
         const sendEmailMock = vi.fn(async () => {
           return Promise.resolve({ accepted: ['test@email.com'] })
@@ -539,9 +539,9 @@ describe(
       async () => {
         process.env.EMAIL_PROVIDER_NAME = 'smtp'
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
 
         const sendEmailMock = vi.fn(async () => {
           return Promise.resolve({ accepted: ['test@email.com'] })
@@ -586,10 +586,10 @@ describe(
       async () => {
         process.env.EMAIL_PROVIDER_NAME = 'sendgrid'
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
         // Set other providers to ensure EMAIL_PROVIDER_NAME takes precedence
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -625,10 +625,10 @@ describe(
       async () => {
         process.env.EMAIL_PROVIDER_NAME = 'mailgun'
         process.env.MAILGUN_API_KEY = 'abc'
-        process.env.MAILGUN_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.MAILGUN_SENDER_ADDRESS = 'app@example.com'
         // Set other providers to ensure EMAIL_PROVIDER_NAME takes precedence
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -647,7 +647,7 @@ describe(
 
         const callArgs = mockFetch.mock.calls[0] as any[]
         const body = (callArgs[1] as unknown as { body: FormData }).body
-        expect(callArgs[0]).toBe('https://api.mailgun.net/v3/valuemelody.com/messages')
+        expect(callArgs[0]).toBe('https://api.mailgun.net/v3/example.com/messages')
         expect(body.get('html')).toContain(code)
         expect(body.get('to')).toContain('test@email.com')
 
@@ -666,10 +666,10 @@ describe(
       async () => {
         process.env.EMAIL_PROVIDER_NAME = 'brevo'
         process.env.BREVO_API_KEY = 'abc'
-        process.env.BREVO_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.BREVO_SENDER_ADDRESS = 'app@example.com'
         // Set other providers to ensure EMAIL_PROVIDER_NAME takes precedence
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -707,10 +707,10 @@ describe(
       async () => {
         process.env.EMAIL_PROVIDER_NAME = 'resend'
         process.env.RESEND_API_KEY = 're_2232323'
-        process.env.RESEND_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.RESEND_SENDER_ADDRESS = 'app@example.com'
         // Set other providers to ensure EMAIL_PROVIDER_NAME takes precedence
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })
@@ -748,10 +748,10 @@ describe(
       async () => {
         process.env.EMAIL_PROVIDER_NAME = 'postmark'
         process.env.POSTMARK_API_KEY = 'abc'
-        process.env.POSTMARK_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.POSTMARK_SENDER_ADDRESS = 'app@example.com'
         // Set other providers to ensure EMAIL_PROVIDER_NAME takes precedence
         process.env.SENDGRID_API_KEY = 'abc'
-        process.env.SENDGRID_SENDER_ADDRESS = 'app@valuemelody.com'
+        process.env.SENDGRID_SENDER_ADDRESS = 'app@example.com'
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({ ok: true })

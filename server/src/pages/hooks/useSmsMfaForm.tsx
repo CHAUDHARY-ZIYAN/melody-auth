@@ -1,6 +1,6 @@
 import {
   useCallback, useMemo, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import {
   array, string, object,
 } from 'yup'

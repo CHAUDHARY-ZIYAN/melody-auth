@@ -1,12 +1,17 @@
 import fs from 'fs'
 import path from 'path'
 import { Redis } from 'ioredis'
+import RedisMock from 'ioredis-mock'
 import { adapterConfig } from 'configs'
 
 let _cache: Redis | null = null
 
 export const initConnection = () => {
-  _cache = new Redis(process.env.REDIS_CONNECTION_STRING ?? 'redis://127.0.0.1:6379')
+  if (process.env.REDIS_CLIENT === 'mock') {
+    _cache = new RedisMock() as unknown as Redis
+  } else {
+    _cache = new Redis(process.env.REDIS_CONNECTION_STRING ?? 'redis://127.0.0.1:6379')
+  }
 }
 
 export const getConnection = (): Redis => {
@@ -18,53 +23,53 @@ export const fit = () => (
   {
     get: async (key: string) => {
       switch (key) {
-      case adapterConfig.BaseKVKey.JwtPublicSecret:
-        return fs.readFileSync(
-          path.resolve(adapterConfig.FileLocation.NodePublicKey),
-          'utf8',
-        )
-      case adapterConfig.BaseKVKey.JwtPrivateSecret:
-        return fs.readFileSync(
-          path.resolve(adapterConfig.FileLocation.NodePrivateKey),
-          'utf8',
-        )
-      case adapterConfig.BaseKVKey.DeprecatedJwtPublicSecret: {
-        const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPublicKey)
-        return fs.existsSync(location)
-          ? fs.readFileSync(
-            location,
+        case adapterConfig.BaseKVKey.JwtPublicSecret:
+          return fs.readFileSync(
+            path.resolve(adapterConfig.FileLocation.NodePublicKey),
             'utf8',
           )
-          : null
-      }
-      case adapterConfig.BaseKVKey.DeprecatedJwtPrivateSecret: {
-        const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPrivateKey)
-        return fs.existsSync(location)
-          ? fs.readFileSync(
-            location,
+        case adapterConfig.BaseKVKey.JwtPrivateSecret:
+          return fs.readFileSync(
+            path.resolve(adapterConfig.FileLocation.NodePrivateKey),
             'utf8',
           )
-          : null
-      }
-      case adapterConfig.BaseKVKey.SessionSecret:
-        return fs.readFileSync(
-          path.resolve('./node_session_secret'),
-          'utf8',
-        )
-      case adapterConfig.BaseKVKey.SamlSpCert:
-        return fs.readFileSync(
-          path.resolve(adapterConfig.FileLocation.NodeSamlSpCert),
-          'utf8',
-        )
-      case adapterConfig.BaseKVKey.SamlSpKey:
-        return fs.readFileSync(
-          path.resolve(adapterConfig.FileLocation.NodeSamlSpKey),
-          'utf8',
-        )
-      default: {
-        const cache = getConnection()
-        return cache.get(key)
-      }
+        case adapterConfig.BaseKVKey.DeprecatedJwtPublicSecret: {
+          const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPublicKey)
+          return fs.existsSync(location)
+            ? fs.readFileSync(
+              location,
+              'utf8',
+            )
+            : null
+        }
+        case adapterConfig.BaseKVKey.DeprecatedJwtPrivateSecret: {
+          const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPrivateKey)
+          return fs.existsSync(location)
+            ? fs.readFileSync(
+              location,
+              'utf8',
+            )
+            : null
+        }
+        case adapterConfig.BaseKVKey.SessionSecret:
+          return fs.readFileSync(
+            path.resolve('./node_session_secret'),
+            'utf8',
+          )
+        case adapterConfig.BaseKVKey.SamlSpCert:
+          return fs.readFileSync(
+            path.resolve(adapterConfig.FileLocation.NodeSamlSpCert),
+            'utf8',
+          )
+        case adapterConfig.BaseKVKey.SamlSpKey:
+          return fs.readFileSync(
+            path.resolve(adapterConfig.FileLocation.NodeSamlSpKey),
+            'utf8',
+          )
+        default: {
+          const cache = getConnection()
+          return cache.get(key)
+        }
       }
     },
     put: async (
@@ -88,7 +93,7 @@ export const fit = () => (
       const cache = getConnection()
       return cache.del(key)
     },
-    list: async ({ prefix }: { prefix: string}) => {
+    list: async ({ prefix }: { prefix: string }) => {
       const cache = getConnection()
       const matchedKeys = await cache.keys(`${prefix}*`)
       const results = []

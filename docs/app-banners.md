@@ -1,7 +1,7 @@
 # App Banners
 
 App banners are informational messages that can be displayed on the sign-in page of your applications. They allow you to communicate important information to users before they sign in, such as maintenance notifications, announcements, or warnings.  
-![Banners](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/app_banners_sign_in_screen.jpg)
+![Banners](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/app_banners_sign_in_screen.jpg)
 
 ## Overview
 

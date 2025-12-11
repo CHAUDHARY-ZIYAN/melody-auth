@@ -1,6 +1,6 @@
 import {
   useCallback, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { object } from 'yup'
 import { startAuthentication } from '@simplewebauthn/browser'
 import { View } from './useCurrentView'

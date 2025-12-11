@@ -27,6 +27,9 @@ import {
 } from 'configs'
 
 const checkEmailSetup = (c: Context<typeConfig.Context>) => {
+  const { ENVIRONMENT: environment } = env(c)
+  if (environment === 'dev') return
+
   const {
     BREVO_API_KEY: brevoApiKey,
     BREVO_SENDER_ADDRESS: brevoSender,
@@ -61,18 +64,18 @@ const buildMailer = (context: Context<typeConfig.Context>): IMailer => {
 
   const { EMAIL_PROVIDER_NAME: emailProviderName } = vars
   switch (emailProviderName) {
-  case 'smtp':
-    return new SmtpMailer({ context })
-  case 'sendgrid':
-    return new SendgridMailer({ context })
-  case 'mailgun':
-    return new MailgunMailer({ context })
-  case 'brevo':
-    return new BrevoMailer({ context })
-  case 'resend':
-    return new ResendMailer({ context })
-  case 'postmark':
-    return new PostmarkMailer({ context })
+    case 'smtp':
+      return new SmtpMailer({ context })
+    case 'sendgrid':
+      return new SendgridMailer({ context })
+    case 'mailgun':
+      return new MailgunMailer({ context })
+    case 'brevo':
+      return new BrevoMailer({ context })
+    case 'resend':
+      return new ResendMailer({ context })
+    case 'postmark':
+      return new PostmarkMailer({ context })
   }
 
   // Keep legacy way below for backward compatibility
@@ -119,13 +122,21 @@ export const sendEmail = async (
   const receiver = environment === variableConfig.DefaultEnvironment.Production ? receiverEmail : devEmailReceiver
   const { ENABLE_EMAIL_LOG: enableEmailLog } = env(c)
 
-  const mailer = buildMailer(c)
+  const mailer = environment === 'dev' ? null : buildMailer(c)
 
-  const res = await mailer.sendEmail({
+  const res = environment === 'dev' ? null : await mailer!.sendEmail({
     senderName, content: emailBody, email: receiver, subject,
   })
 
-  if (mailer instanceof SmtpMailer) {
+  if (environment === 'dev') {
+    success = true
+    response = {
+      status: 200,
+      statusText: 'OK',
+      url: 'mock://email',
+      body: 'Mock email sent',
+    }
+  } else if (mailer instanceof SmtpMailer) {
     success = res?.accepted[0] === receiver
     response = res
   } else {

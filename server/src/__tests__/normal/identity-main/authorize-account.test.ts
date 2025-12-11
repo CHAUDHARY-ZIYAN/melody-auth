@@ -207,10 +207,10 @@ describe(
         const emailBody = (callArgs[1] as unknown as { body: string }).body
         expect(callArgs[0]).toBe('https://api.sendgrid.com/v3/mail/send')
         expect(emailBody).toContain('https://google.com')
-        expect(emailBody).not.toContain('https://valuemelody.com/logo.svg')
+        expect(emailBody).not.toContain('https://example.com/logo.svg')
 
         global.fetch = fetchMock
-        process.env.COMPANY_EMAIL_LOGO_URL = 'https://valuemelody.com/logo.svg'
+        process.env.COMPANY_EMAIL_LOGO_URL = 'https://example.com/logo.svg'
       },
     )
 

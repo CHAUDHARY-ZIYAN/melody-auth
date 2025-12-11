@@ -11,11 +11,11 @@ Melody Auth 提供了一系列可自定义选项，以便您根据实际需求�
 ## 信息类配置
 
 ### COMPANY_LOGO_URL
-- **默认值：** https://valuemelody.com/logo.svg
+- **默认值：** https://ziyankhan.com/logo.svg
 - **说明：** 身份验证页面上显示的 Logo 地址。
 
 ### COMPANY_EMAIL_LOGO_URL
-- **默认值：** https://valuemelody.com/logo.jpg
+- **默认值：** https://ziyankhan.com/logo.jpg
 - **说明：** 邮件中显示的 Logo 地址。请注意，部分邮件客户端可能不支持 SVG 格式。
 
 ### EMAIL_SENDER_NAME
@@ -63,7 +63,7 @@ Melody Auth 提供了一系列可自定义选项，以便您根据实际需求�
 ### ENABLE_PASSWORD_RESET
 - **默认值：** true
 - **说明：** 是否启用密码重置功能。如果设为 `false`，则隐藏“忘记密码”入口。  
-- 需要先完成 [邮件服务商配置](https://auth.valuemelody.com/zh/email-provider-setup.html)
+- 需要先完成 [邮件服务商配置](https://auth.ziyankhan.com/zh/email-provider-setup.html)
 
 ### ENABLE_NAMES
 - **默认值：** true
@@ -80,7 +80,7 @@ Melody Auth 提供了一系列可自定义选项，以便您根据实际需求�
 ### ENABLE_EMAIL_VERIFICATION
 - **默认值：** true
 - **说明：** 注册后向用户发送验证邮件。  
-- 需要先完成 [邮件服务商配置](https://auth.valuemelody.com/zh/email-provider-setup.html)
+- 需要先完成 [邮件服务商配置](https://auth.ziyankhan.com/zh/email-provider-setup.html)
 
 ### REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL
 - **默认值：** false
@@ -150,23 +150,23 @@ Melody Auth 提供了一系列可自定义选项，以便您根据实际需求�
 ### SMS_MFA_IS_REQUIRED
 - **默认值：** false
 - **说明：** 若设为 `true`，用户必须通过短信验证码确认登录。  
-- 需要先完成 [短信服务商配置](https://auth.valuemelody.com/zh/sms-provider-setup.html)
+- 需要先完成 [短信服务商配置](https://auth.ziyankhan.com/zh/sms-provider-setup.html)
 
 ### EMAIL_MFA_IS_REQUIRED
 - **默认值：** false
 - **说明：** 若设为 `true`，用户必须通过邮件验证码确认登录。  
-- 需要先完成 [邮件服务商配置](https://auth.valuemelody.com/zh/email-provider-setup.html)
+- 需要先完成 [邮件服务商配置](https://auth.ziyankhan.com/zh/email-provider-setup.html)
 
 ### ENFORCE_ONE_MFA_ENROLLMENT
 - **默认值：** ['otp', 'email']
 - **说明：** 当所有 *_MFA_IS_REQUIRED 均为 `false` 时，用此列表强制用户至少注册其中一种 MFA 类型：['otp', 'sms', 'email']。若为空数组，则不强制任何 MFA。  
-- 若列表包含 'email'，需要先完成 [邮件服务商配置](https://auth.valuemelody.com/zh/email-provider-setup.html)  
-- 若列表包含 'sms'，需要先完成 [短信服务商配置](https://auth.valuemelody.com/zh/sms-provider-setup.html)
+- 若列表包含 'email'，需要先完成 [邮件服务商配置](https://auth.ziyankhan.com/zh/email-provider-setup.html)  
+- 若列表包含 'sms'，需要先完成 [短信服务商配置](https://auth.ziyankhan.com/zh/sms-provider-setup.html)
 
 ### ALLOW_EMAIL_MFA_AS_BACKUP
 - **默认值：** true
 - **说明：** 允许已注册 OTP 或 SMS 但未注册邮件 MFA 的用户将邮件 MFA 作为备份。  
-- 需要先完成 [邮件服务商配置](https://auth.valuemelody.com/zh/email-provider-setup.html)
+- 需要先完成 [邮件服务商配置](https://auth.ziyankhan.com/zh/email-provider-setup.html)
 
 ### ALLOW_PASSKEY_ENROLLMENT
 - **默认值：** false

@@ -140,7 +140,7 @@ const AuthSetup = ({ children }: PropsWithChildren) => {
   return children
 }
 
-const LayoutSetup = ({ children } : PropsWithChildren) => {
+const LayoutSetup = ({ children }: PropsWithChildren) => {
   const t = useTranslations()
   const locale = useLocale()
   const {
@@ -208,11 +208,11 @@ const LayoutSetup = ({ children } : PropsWithChildren) => {
             <SidebarMenuItem>
               <div className='flex items-center mt-2'>
                 <img
-                  src='https://valuemelody.com/logo.svg'
-                  className='mr-3 h-6'
+                  src='https://avatars.githubusercontent.com/u/12345678?s=200&v=4'
+                  className='mr-3 h-6 rounded-full'
                 />
                 <span className='self-center whitespace-nowrap text-medium font-semibold dark:text-white'>
-                  {t('layout.brand')}
+                  {t('layout.brand').replace('Melody Auth', 'Ziyan Auth')}
                 </span>
               </div>
             </SidebarMenuItem>
@@ -237,20 +237,20 @@ const LayoutSetup = ({ children } : PropsWithChildren) => {
               accessTool.Access.ReadUser,
               userInfo?.roles,
             ) && (
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  isActive={pathname === routeTool.Internal.Users}
-                >
-                  <Link
-                    href={routeTool.Internal.Users}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === routeTool.Internal.Users}
                   >
-                    <UsersRound />
-                    {t('layout.users')}
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            )}
+                    <Link
+                      href={routeTool.Internal.Users}
+                    >
+                      <UsersRound />
+                      {t('layout.users')}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              )}
             {showUserAttribute && (
               <SidebarMenuItem>
                 <SidebarMenuButton
@@ -270,56 +270,56 @@ const LayoutSetup = ({ children } : PropsWithChildren) => {
               accessTool.Access.ReadRole,
               userInfo?.roles,
             ) && (
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  isActive={pathname === routeTool.Internal.Roles}
-                >
-                  <Link
-                    href={routeTool.Internal.Roles}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === routeTool.Internal.Roles}
                   >
-                    <IdCard />
-                    {t('layout.roles')}
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            )}
+                    <Link
+                      href={routeTool.Internal.Roles}
+                    >
+                      <IdCard />
+                      {t('layout.roles')}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              )}
             {accessTool.isAllowedAccess(
               accessTool.Access.ReadApp,
               userInfo?.roles,
             ) && (
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  isActive={pathname === routeTool.Internal.Apps}
-                >
-                  <Link
-                    href={routeTool.Internal.Apps}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === routeTool.Internal.Apps}
                   >
-                    <Workflow />
-                    {t('layout.apps')}
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            )}
+                    <Link
+                      href={routeTool.Internal.Apps}
+                    >
+                      <Workflow />
+                      {t('layout.apps')}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              )}
             {accessTool.isAllowedAccess(
               accessTool.Access.ReadScope,
               userInfo?.roles,
             ) && (
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  isActive={pathname === routeTool.Internal.Scopes}
-                >
-                  <Link
-                    href={routeTool.Internal.Scopes}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === routeTool.Internal.Scopes}
                   >
-                    <Shapes />
-                    {t('layout.scopes')}
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            )}
+                    <Link
+                      href={routeTool.Internal.Scopes}
+                    >
+                      <Shapes />
+                      {t('layout.scopes')}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              )}
             {!!showOrg && (
               <SidebarMenuItem>
                 <SidebarMenuButton
@@ -439,7 +439,7 @@ const LayoutSetup = ({ children } : PropsWithChildren) => {
   )
 }
 
-const Setup = ({ children } : PropsWithChildren) => {
+const Setup = ({ children }: PropsWithChildren) => {
   const router = useRouter()
   const pathname = usePathname()
 

@@ -43,7 +43,7 @@ ENABLE_USER_ATTRIBUTE = true
     - **Include in ID Token Body**：该属性是否包含在 JWT ID token 的 payload 中
     - **Include in User Info**：该属性是否通过 user info 接口返回
   
-![用户属性](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/user_attributes.jpg)
+![用户属性](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/user_attributes.jpg)
 
 ### S2S API 管理
 

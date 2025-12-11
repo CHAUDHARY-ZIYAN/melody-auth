@@ -8,9 +8,9 @@ keep_vars = true
 [vars]
 
 # Information
-COMPANY_LOGO_URL="https://valuemelody.com/logo.svg"
-COMPANY_EMAIL_LOGO_URL="https://valuemelody.com/logo.jpg" # be aware that svg format might not be supported in some email clients
-EMAIL_SENDER_NAME="Melody Auth"
+COMPANY_LOGO_URL="https://github.com/ziyankhan.png"
+COMPANY_EMAIL_LOGO_URL="https://github.com/ziyankhan.png" # be aware that svg format might not be supported in some email clients
+EMAIL_SENDER_NAME="Ziyan Auth"
 TERMS_LINK="" # Display a link to your terms on sign-up page
 PRIVACY_POLICY_LINK="" # Display a link to your privacy policy on sign-up page
 
@@ -22,17 +22,17 @@ ENABLE_LOCALE_SELECTOR=true # If there is only one SUPPORTED_LOCALE, the locale 
 # Suppression
 ENABLE_SIGN_UP=true
 ENABLE_PASSWORD_SIGN_IN=true
-ENABLE_PASSWORD_RESET=true # Please set up your mailer first https://auth.valuemelody.com/email-provider-setup.html
+ENABLE_PASSWORD_RESET=true # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html
 ENABLE_NAMES=true
 NAMES_IS_REQUIRED=false
 ENABLE_USER_APP_CONSENT=true
-ENABLE_EMAIL_VERIFICATION=true # Please set up your mailer first https://auth.valuemelody.com/email-provider-setup.html. If true, on user sign-up, the email verification email will be sent.
+ENABLE_EMAIL_VERIFICATION=true # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html. If true, on user sign-up, the email verification email will be sent.
 REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL=false # If both ENABLE_EMAIL_VERIFICATION and REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL are true, on user sign-up, the welcome email will be sent instead of the email verification email.
 ENABLE_ORG=false
 ALLOW_USER_SWITCH_ORG_ON_SIGN_IN=false
 ENABLE_USER_ATTRIBUTE=false
 BLOCKED_POLICIES=["change_org"] # A list of policy names that should be blocked (change_password, change_email, reset_mfa, manage_passkey, update_info, change_org), preventing end users from triggering them
-ENABLE_PASSWORDLESS_SIGN_IN=false # Please set up your mailer first https://auth.valuemelody.com/email-provider-setup.html. Setting this option to true will automatically override ENABLE_SIGN_UP, ENABLE_PASSWORD_SIGN_IN, ENABLE_PASSWORD_RESET, ALLOW_PASSKEY_ENROLLMENT, ENABLE_RECOVERY_CODE to false. Also, make sure to disable email MFA in order to use this feature.
+ENABLE_PASSWORDLESS_SIGN_IN=false # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html. Setting this option to true will automatically override ENABLE_SIGN_UP, ENABLE_PASSWORD_SIGN_IN, ENABLE_PASSWORD_RESET, ALLOW_PASSKEY_ENROLLMENT, ENABLE_RECOVERY_CODE to false. Also, make sure to disable email MFA in order to use this feature.
 EMBEDDED_AUTH_ORIGINS=[] # List of origins that are allowed to use embedded auth APIs.
 ENABLE_SAML_SSO_AS_SP=false # Experimental feature, only support in Node.js environment
 ENABLE_APP_BANNER=false # Enable the feature for displaying banners on the sign-in page of apps
@@ -47,8 +47,8 @@ SERVER_SESSION_EXPIRES_IN=1800 # Set to 0 to disable session
 
 # MFA
 OTP_MFA_IS_REQUIRED=false
-EMAIL_MFA_IS_REQUIRED=false # Please set up your mailer first https://auth.valuemelody.com/email-provider-setup.html
-SMS_MFA_IS_REQUIRED=false # Please set up your sms provider first https://auth.valuemelody.com/sms-provider-setup.html
+EMAIL_MFA_IS_REQUIRED=false # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html
+SMS_MFA_IS_REQUIRED=false # Please set up your sms provider first https://auth.ziyankhan.com/sms-provider-setup.html
 ENFORCE_ONE_MFA_ENROLLMENT=['otp', 'email'] # Enforce one MFA type from the list. Available options are ‘email’, ‘otp’, and ‘sms’. This setting is only effective if OTP_MFA_IS_REQUIRED, SMS_MFA_IS_REQUIRED, and EMAIL_MFA_IS_REQUIRED are all set to false. An empty list means no MFA type will be enforced. You must enable email functionality for the email MFA option to work.
 ALLOW_EMAIL_MFA_AS_BACKUP=true
 ALLOW_PASSKEY_ENROLLMENT=false
@@ -74,8 +74,8 @@ SMS_MFA_MESSAGE_THRESHOLD=5 # Maximum number of SMS MFA message requests allowed
 # OIDC_AUTH_PROVIDERS=[] # List of OIDC authentication providers for users to sign in with. Once a provider's name is set, it should remain unchanged. The provider must supports standard OAuth 2.0 IdToken exchange with PKCE and JWKS endpoint. Example: ['Auth0', 'Azure']. You must set the configurations for each of your OIDC_AUTH_PROVIDERS in src/configs/variable.ts file accordingly.
 
 # Log
-LOG_LEVEL="silent" # Set the log level to silent, info, warn, or error. If environment is set to dev, the log level always defaults to info, regardless of this value.
-ENABLE_EMAIL_LOG=false # Specify whether email should be logged. If enabled, ensure that you implement your own email log cleanup scheduler.
+LOG_LEVEL="debug" # Set the log level to silent, info, warn, or error. If environment is set to dev, the log level always defaults to info, regardless of this value.
+ENABLE_EMAIL_LOG=true # Specify whether email should be logged. If enabled, ensure that you implement your own email log cleanup scheduler.
 ENABLE_SMS_LOG=false # Specify whether SMS should be logged. If enabled, ensure that you implement your own SMS log cleanup scheduler
 ENABLE_SIGN_IN_LOG=false # Specify whether the user’s sign-in IP (only applicable in production environments) and location details (only applicable in Cloudflare environments) should be logged. If enabled, ensure that you implement your own sign-in log cleanup scheduler, clearly disclose the collection of IP and location data in your privacy policy, and comply with all relevant legal requirements.
 

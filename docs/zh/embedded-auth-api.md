@@ -11,8 +11,8 @@ EMBEDDED_AUTH_ORIGINS=['http://localhost:3000']
 嵌入式认证同时会遵循你在服务器中的其他配置；如果有功能不需要或不受支持，请务必在服务器配置中将其禁用。
 
 ## 详细文档
-更多信息请参阅 [嵌入式认证 API Swagger](https://auth-server.valuemelody.com/api/v1/embedded-swagger)。
+更多信息请参阅 [嵌入式认证 API Swagger](https://auth-server.ziyankhan.com/api/v1/embedded-swagger)。
 
 ## 示例
 一个极简的 React 示例可在此获取  
-[embedded-auth-example](https://github.com/ValueMelody/melody-auth-examples/tree/main/embedded-auth)
+[embedded-auth-example](https://github.com/ziyankhan/melody-auth-examples/tree/main/embedded-auth)

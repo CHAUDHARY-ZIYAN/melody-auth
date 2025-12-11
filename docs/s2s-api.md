@@ -52,4 +52,4 @@ fetch('/oauth2/v1/token', {
 ```
 
 ## Detailed Documentation
-For more detailed information, please see [Rest API Swagger](https://auth-server.valuemelody.com/api/v1/swagger).
+For more detailed information, please see [Rest API Swagger](https://auth-server.ziyankhan.com/api/v1/swagger).

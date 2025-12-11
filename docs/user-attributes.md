@@ -43,7 +43,7 @@ Once enabled, you can manage user attributes through the admin panel:
     - **Include in ID Token Body**: Whether this attribute is included in JWT ID token payload
     - **Include in User Info**: Whether this attribute is returned by the user info endpoint
   
-![User Attributes](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/user_attributes.jpg)
+![User Attributes](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/user_attributes.jpg)
 
 ### S2S API Management
 

@@ -64,7 +64,7 @@ export const RoleAccesses = {
   - `https://your-app.example.com/callback?refresh_token=...&refresh_token_expires_on=...&refresh_token_expires_in=...`
 
 点击链接会打开已预加载模拟 refresh token 的应用。  
-![Impersonation](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/impersonation.jpg)
+![Impersonation](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/impersonation.jpg)
 
 ## 前端对模拟的处理
 所有前端 SDK 会在加载时自动解析 `refresh_token` 查询参数并存储。

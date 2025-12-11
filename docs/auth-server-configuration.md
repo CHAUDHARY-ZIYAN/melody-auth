@@ -11,11 +11,11 @@ Melody Auth offers a range of customizable options to tailor the authentication 
 ## Information Configs
 
 ### COMPANY_LOGO_URL
-- **Default:** https://valuemelody.com/logo.svg
+- **Default:** https://ziyankhan.com/logo.svg
 - **Description:** URL of the logo displayed on authentication pages.
 
 ### COMPANY_EMAIL_LOGO_URL
-- **Default:** https://valuemelody.com/logo.jpg
+- **Default:** https://ziyankhan.com/logo.jpg
 - **Description:** URL of the logo displayed on emails. Note that SVG format might not be supported in some email clients.
 
 ### EMAIL_SENDER_NAME
@@ -63,7 +63,7 @@ Melody Auth offers a range of customizable options to tailor the authentication 
 ### ENABLE_PASSWORD_RESET
 - **Default:** true
 - **Description:** Enables password reset functionality. If `false`, the "Forgot Password" option is hidden.
-- Requires [Email Provider Setup](https://auth.valuemelody.com/email-provider-setup.html)
+- Requires [Email Provider Setup](https://auth.ziyankhan.com/email-provider-setup.html)
 
 ### ENABLE_NAMES
 - **Default:** true
@@ -80,7 +80,7 @@ Melody Auth offers a range of customizable options to tailor the authentication 
 ### ENABLE_EMAIL_VERIFICATION
 - **Default:** true
 - **Description:** Send a verification email to the user after sign-up.
-- Requires [Email Provider Setup](https://auth.valuemelody.com/email-provider-setup.html)
+- Requires [Email Provider Setup](https://auth.ziyankhan.com/email-provider-setup.html)
 
 ### REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL
 - **Default:** false
@@ -150,23 +150,23 @@ Melody Auth offers a range of customizable options to tailor the authentication 
 ### SMS_MFA_IS_REQUIRED
 - **Default:** false
 - **Description:** Enables SMS-based MFA. If `true`, users must confirm logins via an SMS code.
-- Requires [SMS Provider Setup](https://auth.valuemelody.com/sms-provider-setup.html)
+- Requires [SMS Provider Setup](https://auth.ziyankhan.com/sms-provider-setup.html)
 
 ### EMAIL_MFA_IS_REQUIRED
 - **Default:** false
 - **Description:** Enables email-based MFA. If `true`, users must confirm logins via an email code.
-- Requires [Email Provider Setup](https://auth.valuemelody.com/email-provider-setup.html)
+- Requires [Email Provider Setup](https://auth.ziyankhan.com/email-provider-setup.html)
 
 ### ENFORCE_ONE_MFA_ENROLLMENT
 - **Default:** ['otp', 'email']
 - **Description:** Forces enrollment in at least one MFA type from the list: ['otp', 'sms', 'email']. Only applies if all *_MFA_IS_REQUIRED settings are false. If empty, no MFA is enforced.
-- Requires [Email Provider Setup](https://auth.valuemelody.com/email-provider-setup.html) if 'email' is in the list
-- Requires [SMS Provider Setup](https://auth.valuemelody.com/sms-provider-setup.html) if 'sms' is in the list
+- Requires [Email Provider Setup](https://auth.ziyankhan.com/email-provider-setup.html) if 'email' is in the list
+- Requires [SMS Provider Setup](https://auth.ziyankhan.com/sms-provider-setup.html) if 'sms' is in the list
 
 ### ALLOW_EMAIL_MFA_AS_BACKUP
 - **Default:** true
 - **Description:** Allows email-based MFA as a fallback if a user is enrolled in OTP or SMS but not in email MFA.
-- Requires [Email Provider Setup](https://auth.valuemelody.com/email-provider-setup.html)
+- Requires [Email Provider Setup](https://auth.ziyankhan.com/email-provider-setup.html)
 
 ### ALLOW_PASSKEY_ENROLLMENT
 - **Default:** false

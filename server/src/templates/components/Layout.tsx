@@ -57,7 +57,7 @@ const Layout = ({
                                         <p>
                                             ${localeConfig.common.poweredBy[locale]}
                                             <a
-                                              href="https://github.com/ValueMelody/melody-auth"
+                                              href="https://github.com/ziyankhan/melody-auth"
                                               target="_blank"
                                               style="color: #666666;"
                                             >

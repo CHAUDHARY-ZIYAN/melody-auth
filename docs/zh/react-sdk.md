@@ -338,4 +338,4 @@ export default function Home () {
 
 ## 示例应用
 
-使用 React SDK 的示例应用：`https://github.com/ValueMelody/melody-auth-examples/tree/main/vite-react-demo`。
+使用 React SDK 的示例应用：`https://github.com/ziyankhan/melody-auth-examples/tree/main/vite-react-demo`。

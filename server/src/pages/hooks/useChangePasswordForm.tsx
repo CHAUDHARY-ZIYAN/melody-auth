@@ -1,6 +1,6 @@
 import {
   useState, useMemo,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { object } from 'yup'
 import {
   routeConfig, typeConfig,

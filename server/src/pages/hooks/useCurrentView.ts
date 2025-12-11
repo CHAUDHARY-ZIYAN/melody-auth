@@ -1,6 +1,6 @@
 import {
   useCallback, useMemo, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { routeConfig } from 'configs'
 import { getStepFromParams } from 'pages/tools/param'
 import { View } from 'configs/route'

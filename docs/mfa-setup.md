@@ -60,7 +60,7 @@ Override MFA behavior per application (client) rather than globally.
 - S2S API: Update an app’s MFA configuration programmatically.
 
 This is useful when different apps require different assurance levels (e.g., stricter MFA for internal admin apps). However, it will be conflicting with the ENFORCE_ONE_MFA_ENROLLMENT setting, so you need to carefully consider the impact.
-![App-level MFA](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/app_level_mfa.jpg)
+![App-level MFA](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/app_level_mfa.jpg)
 
 ## Related policies (shortcuts)
 

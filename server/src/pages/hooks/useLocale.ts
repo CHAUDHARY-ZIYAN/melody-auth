@@ -1,6 +1,6 @@
 import {
   useCallback, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { typeConfig } from 'configs'
 
 const useLocale = ({ initialLocale }: {

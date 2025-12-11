@@ -1,19 +1,19 @@
 ---
 home: true
 title: Melody Auth
-heroImage: https://valuemelody.com/logo.svg
+heroImage: https://ziyankhan.com/logo.svg
 actions:
   - text: GitHub
-    link: https://github.com/ValueMelody/melody-auth
+    link: https://github.com/ziyankhan/melody-auth
     type: primary
   - text: 截图
     link: /zh/screenshots.html
     type: secondary
   - text: 演示
-    link: https://auth-demo.valuemelody.com
+    link: https://auth-demo.ziyankhan.com
     type: secondary
   - text: 更新日志
-    link: https://github.com/ValueMelody/melody-auth/releases
+    link: https://github.com/ziyankhan/melody-auth/releases
     type: secondary
 
 features:

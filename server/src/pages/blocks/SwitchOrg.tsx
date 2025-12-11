@@ -1,4 +1,4 @@
-import { useState } from 'hono/jsx'
+import { useState } from 'hono/jsx/dom'
 import { GetProcessSwitchOrgRes } from 'handlers/identity'
 import {
   SubmitError, ViewTitle,

@@ -1,4 +1,4 @@
-import { Event } from 'hono/jsx'
+import { Event } from 'hono/jsx/dom'
 import { typeConfig } from 'configs'
 
 export interface LocaleSelectorProps {

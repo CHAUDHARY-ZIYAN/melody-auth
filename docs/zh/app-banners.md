@@ -1,7 +1,7 @@
 # 应用横幅
 
 应用横幅是可以显示在应用程序登录页面上的信息性消息。它们允许你在用户登录之前传达重要信息，例如维护通知、公告或警告。  
-![Banners](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/app_banners_sign_in_screen.jpg)
+![Banners](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/app_banners_sign_in_screen.jpg)
 
 ## 概述
 

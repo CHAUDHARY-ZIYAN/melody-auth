@@ -85,7 +85,7 @@ describe(
       'renders the powered-by link with correct href and text',
       () => {
         const container = setup()
-        const link = container.querySelector('a[href="https://github.com/ValueMelody/melody-auth"]')
+        const link = container.querySelector('a[href="https://github.com/ziyankhan/melody-auth"]')
         expect(link).toBeDefined()
         expect(link?.textContent?.trim()).toBe(layout.poweredByAuth[dummyLocale])
       },

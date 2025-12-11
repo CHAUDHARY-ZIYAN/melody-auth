@@ -1,4 +1,4 @@
-import { useEffect } from 'hono/jsx'
+import { useEffect } from 'hono/jsx/dom'
 import {
   useSubmitError, View,
 } from 'pages/hooks'

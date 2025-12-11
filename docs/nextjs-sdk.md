@@ -416,7 +416,7 @@ The SDK uses cookies by default for server-side compatibility. Key features:
 
 ## Examples
 
-Complete examples are available in the [melody-auth-examples](https://github.com/ValueMelody/melody-auth-examples) repository:
+Complete examples are available in the [melody-auth-examples](https://github.com/ziyankhan/melody-auth-examples) repository:
 
 - App Router setup
 - Pages Router setup

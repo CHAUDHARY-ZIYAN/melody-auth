@@ -1,6 +1,6 @@
 import {
   useState, useCallback, useEffect,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { routeConfig } from 'configs'
 import { InitialProps } from 'pages/hooks'
 import { parseResponse } from 'pages/tools/request'

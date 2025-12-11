@@ -28,15 +28,15 @@
 2. 选择你的 `melody-auth` Worker
 3. 点击 “Settings” -> “Variables and Secrets”
 4. 为你打算使用的邮件、短信或社交登录服务提供商添加必要的环境变量。
-    - [Email Provider Setup](https://auth.valuemelody.com/zh/email-provider-setup.html)
-    - [SMS Provider Setup](https://auth.valuemelody.com/zh/sms-provider-setup.html)
-    - [Social Sign-In Provider Setup](https://auth.valuemelody.com/zh/social-sign-in-provider-setup.html)
+    - [Email Provider Setup](https://auth.ziyankhan.com/zh/email-provider-setup.html)
+    - [SMS Provider Setup](https://auth.ziyankhan.com/zh/sms-provider-setup.html)
+    - [Social Sign-In Provider Setup](https://auth.ziyankhan.com/zh/social-sign-in-provider-setup.html)
 5. 定义环境变量 `ENVIRONMENT`，并确保其值不为 `dev`。
 
 ### 4. 项目设置
 1. 克隆仓库并登录 Cloudflare：
     ```
-    git clone git@github.com:ValueMelody/melody-auth.git
+    git clone git@github.com:ziyankhan/melody-auth.git
     cd melody-auth/server
     npm install
     npx wrangler login
@@ -76,7 +76,7 @@ npm run prod:deploy
 ## Cloudflare 本地/开发环境
 若要搭建本地开发环境，请按照以下步骤：
 ```
-git clone git@github.com:ValueMelody/melody-auth.git
+git clone git@github.com:ziyankhan/melody-auth.git
 cd melody-auth/server
 npm install
 
@@ -120,7 +120,7 @@ npm run dev:start
 
 ### 2. 项目设置
 ```
-git clone git@github.com:ValueMelody/melody-auth.git
+git clone git@github.com:ziyankhan/melody-auth.git
 cd melody-auth/server
 npm install
 

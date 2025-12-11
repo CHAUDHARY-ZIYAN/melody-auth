@@ -1,6 +1,6 @@
 import {
   useEffect, useRef,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { toCanvas } from 'qrcode'
 import {
   useSubmitError, View, useOtpMfaForm,

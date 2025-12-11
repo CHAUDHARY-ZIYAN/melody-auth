@@ -323,4 +323,4 @@ export default function Home () {
 
 ## Example app
 
-See the minimal React example using the React SDK: `https://github.com/ValueMelody/melody-auth-examples/tree/main/vite-react-demo`.
+See the minimal React example using the React SDK: `https://github.com/ziyankhan/melody-auth-examples/tree/main/vite-react-demo`.

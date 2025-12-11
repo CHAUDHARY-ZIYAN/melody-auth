@@ -274,4 +274,4 @@ const userInfo = await this.authService.acquireUserInfo()
 
 ## 示例应用
 
-使用 Angular SDK 的示例应用：`https://github.com/ValueMelody/melody-auth-examples/tree/main/angular-example`。
+使用 Angular SDK 的示例应用：`https://github.com/ziyankhan/melody-auth-examples/tree/main/angular-example`。

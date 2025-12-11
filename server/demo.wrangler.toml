@@ -5,9 +5,9 @@ keep_vars = true
 [vars]
 
 # Information
-COMPANY_LOGO_URL="https://valuemelody.com/logo.svg"
-COMPANY_EMAIL_LOGO_URL="https://valuemelody.com/logo.jpg"
-EMAIL_SENDER_NAME="Melody Auth Demo"
+COMPANY_LOGO_URL="https://github.com/ziyankhan.png"
+COMPANY_EMAIL_LOGO_URL="https://github.com/ziyankhan.png"
+EMAIL_SENDER_NAME="Ziyan Auth Demo"
 TERMS_LINK=""
 PRIVACY_POLICY_LINK=""
 

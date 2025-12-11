@@ -1,4 +1,4 @@
-import { useEffect } from 'hono/jsx'
+import { useEffect } from 'hono/jsx/dom'
 import { typeConfig } from 'configs'
 import {
   usePasswordlessVerifyForm, useSubmitError, View,

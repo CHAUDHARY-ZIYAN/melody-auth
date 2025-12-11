@@ -9,4 +9,4 @@ npm install @melody-auth/react --save
 ```
 
 ## Detailed Documentation
-For more detailed information, please see [Detailed Documentation](https://auth.valuemelody.com/react-sdk.html).
+For more detailed information, please see [Detailed Documentation](https://auth.ziyankhan.com/react-sdk.html).

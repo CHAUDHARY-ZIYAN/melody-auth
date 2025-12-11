@@ -1,6 +1,6 @@
 import {
   useCallback, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { View } from '.'
 import {
   messageConfig, typeConfig, routeConfig,

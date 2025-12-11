@@ -1,7 +1,7 @@
 import { object } from 'yup'
 import {
   useCallback, useMemo, useState,
-} from 'hono/jsx'
+} from 'hono/jsx/dom'
 import { View } from './useCurrentView'
 import {
   codeField, validate,

@@ -6,7 +6,7 @@
 - **Admin Panel** 部署到 **Cloudflare Workers**
 - **Admin Panel** 部署到 **Vercel**
 
-在继续之前，请确保已完成 [Auth Server 安装](https://auth.valuemelody.com/zh/auth-server-setup.html) 和 [Admin Panel 安装](https://auth.valuemelody.com/zh/admin-panel-setup.html) 的步骤。
+在继续之前，请确保已完成 [Auth Server 安装](https://auth.ziyankhan.com/zh/auth-server-setup.html) 和 [Admin Panel 安装](https://auth.ziyankhan.com/zh/admin-panel-setup.html) 的步骤。
 
 ## 将 Auth Server 部署到 Cloudflare Workers
 

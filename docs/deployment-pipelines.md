@@ -4,7 +4,7 @@ There are three deployment pipelines (Github Actions) you can take advantage of:
 - Pipeline to deploy admin panel to Cloudflare Workers
 - Pipeline to deploy admin panel to Vercel
 
-Make sure you have completed the [Auth Server Setup](https://auth.valuemelody.com/auth-server-setup.html) and [Admin Panel Setup](https://auth.valuemelody.com/admin-panel-setup.html) before proceeding.
+Make sure you have completed the [Auth Server Setup](https://auth.ziyankhan.com/auth-server-setup.html) and [Admin Panel Setup](https://auth.ziyankhan.com/admin-panel-setup.html) before proceeding.
 
 ## Deploy Auth Server to Cloudflare Workers
 - Check out the `.github/workflows/server-deploy.yml` file.

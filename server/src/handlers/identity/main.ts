@@ -1,3 +1,4 @@
+
 import {
   Context, TypedResponse,
 } from 'hono'
@@ -28,8 +29,6 @@ import {
 import { oauthHandler } from 'handlers'
 
 export const postAuthorizePassword = async (c: Context<typeConfig.Context>) => {
-  await signInHook.preSignIn()
-
   const reqBody = await c.req.json()
 
   const bodyDto = new identityDto.PostAuthorizeWithPasswordDto({
@@ -38,17 +37,34 @@ export const postAuthorizePassword = async (c: Context<typeConfig.Context>) => {
   })
   await validateUtil.dto(bodyDto)
 
+  const app = await appService.verifySPAClientRequest(
+    c,
+    bodyDto.clientId,
+    bodyDto.redirectUri,
+  )
+
+  const { AUTHORIZATION_CODE_EXPIRES_IN: codeExpiresIn } = env(c)
+  const mfaConfig = mfaService.getAppMfaConfig(app)
+
   const user = await userService.verifyPasswordSignIn(
     c,
     bodyDto,
   )
 
-  const {
-    authCode, authCodeBody,
-  } = await identityService.processSignIn(
-    c,
-    bodyDto,
+  const request = new oauthDto.GetAuthorizeDto(bodyDto)
+  const authCode = genRandomString(128)
+  const authCodeBody = {
+    appId: app.id,
+    appName: app.name,
     user,
+    request,
+    mfa: mfaConfig ? mfaService.getAuthCodeBodyMfaConfig(mfaConfig) : undefined,
+  }
+  await kvService.storeAuthCode(
+    c.env.KV,
+    authCode,
+    authCodeBody,
+    codeExpiresIn,
   )
 
   const result = await identityService.processPostAuthorize(
@@ -57,8 +73,6 @@ export const postAuthorizePassword = async (c: Context<typeConfig.Context>) => {
     authCode,
     authCodeBody,
   )
-
-  await signInHook.postSignIn()
 
   return c.json(result)
 }
@@ -219,7 +233,7 @@ export interface GetAppConsentRes {
   appName: string;
 }
 export const getAppConsent = async (c: Context<typeConfig.Context>):
-Promise<TypedResponse<GetAppConsentRes>> => {
+  Promise<TypedResponse<GetAppConsentRes>> => {
   const queryDto = await identityDto.parseGetProcess(c)
 
   const authInfo = await kvService.getAuthCodeBody(
@@ -301,11 +315,11 @@ export const postLogout = async (c: Context<typeConfig.Context>) => {
   }
 
   const { AUTH_SERVER_URL } = env(c)
-  const redirectUri = `${requestUtil.stripEndingSlash(AUTH_SERVER_URL)}${routeConfig.OauthRoute.Logout}`
+  const redirectUri = `${requestUtil.stripEndingSlash(AUTH_SERVER_URL)}${routeConfig.OauthRoute.Logout} `
 
   return c.json({
     success: true,
     redirectUri:
-      `${redirectUri}?post_logout_redirect_uri=${bodyDto.postLogoutRedirectUri}&client_id=${refreshTokenBody.clientId}`,
+      `${redirectUri}?post_logout_redirect_uri = ${bodyDto.postLogoutRedirectUri}& client_id=${refreshTokenBody.clientId} `,
   })
 }

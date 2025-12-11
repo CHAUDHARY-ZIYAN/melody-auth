@@ -29,15 +29,15 @@ In your Cloudflare dashboard:
 2. Select your "melody-auth" worker
 3. Click on "Settings" -> "Variables and Secrets"
 4. Include the required environment variables for any email, SMS, or social sign-in providers you plan to use.
-    - [Email Provider Setup](https://auth.valuemelody.com/email-provider-setup.html)
-    - [SMS Provider Setup](https://auth.valuemelody.com/sms-provider-setup.html)
-    - [Social Sign-In Provider Setup](https://auth.valuemelody.com/social-sign-in-provider-setup.html)
+    - [Email Provider Setup](https://auth.ziyankhan.com/email-provider-setup.html)
+    - [SMS Provider Setup](https://auth.ziyankhan.com/sms-provider-setup.html)
+    - [Social Sign-In Provider Setup](https://auth.ziyankhan.com/social-sign-in-provider-setup.html)
 5. Define an environment variable “ENVIRONMENT” and ensure it is set to a value other than “dev”.
 
 ### 4. Project Setup
 1. Clone the Repository and login to Cloudflare:
     ```
-    git clone git@github.com:ValueMelody/melody-auth.git
+    git clone git@github.com:ziyankhan/melody-auth.git
     cd melody-auth/server
     npm install
     npx wrangler login
@@ -77,7 +77,7 @@ npm run prod:deploy
 ## Cloudflare Local/Development Environment
 To set up your local development environment, follow these steps:
 ```
-git clone git@github.com:ValueMelody/melody-auth.git
+git clone git@github.com:ziyankhan/melody-auth.git
 cd melody-auth/server
 npm install
 
@@ -121,7 +121,7 @@ Begin by setting up your PostgreSQL and Redis servers, and ensure you have the c
 
 ### 2. Project setup
 ```
-git clone git@github.com:ValueMelody/melody-auth.git
+git clone git@github.com:ziyankhan/melody-auth.git
 cd melody-auth/server
 npm install
 

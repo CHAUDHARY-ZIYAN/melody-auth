@@ -1,4 +1,4 @@
-import { useMemo } from 'hono/jsx'
+import { useMemo } from 'hono/jsx/dom'
 
 const InfoIcon = () => {
   return (

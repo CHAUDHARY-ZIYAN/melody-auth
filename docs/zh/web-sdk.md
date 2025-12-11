@@ -153,4 +153,4 @@ await logout(
 
 ## 示例应用
 
-查看使用 Web SDK 的最简 Vite 示例：`https://github.com/ValueMelody/melody-auth-examples/tree/main/vite-web-example`。
+查看使用 Web SDK 的最简 Vite 示例：`https://github.com/ziyankhan/melody-auth-examples/tree/main/vite-web-example`。

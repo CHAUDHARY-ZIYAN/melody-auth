@@ -64,7 +64,7 @@ Ensure the admin account has the intended role assigned.
   - `https://your-app.example.com/callback?refresh_token=...&refresh_token_expires_on=...&refresh_token_expires_in=...`
 
 Clicking a link opens the app preloaded with the impersonation refresh token.  
-![Impersonation](https://raw.githubusercontent.com/ValueMelody/melody-auth/main/docs/images/impersonation.jpg)
+![Impersonation](https://raw.githubusercontent.com/ziyankhan/melody-auth/main/docs/images/impersonation.jpg)
 
 ## Frontend handling of impersonation
 All Frontend SDKs automatically parse the `refresh_token` query parameters on load and store them.
