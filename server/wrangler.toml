@@ -83,12 +83,11 @@ ENABLE_SIGN_IN_LOG=false # Specify whether the user’s sign-in IP (only applica
 
 [[kv_namespaces]]
 binding = "KV"
-database_name = "melody-auth-kv-prod"
 id = "1a96f348f3dc4a29afc21ef2b29ca18a" 
 
 [[d1_databases]]
 binding = "DB"
-database_name = "melody-auth-prod"
+database_name = "melody-auth"
 database_id = "86a6f9ed-7a93-45d5-adc8-005c4af2d862" 
 migrations_dir = "./migrations/sqlite"
 
