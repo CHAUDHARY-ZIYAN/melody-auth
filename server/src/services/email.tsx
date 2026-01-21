@@ -124,9 +124,11 @@ export const sendEmail = async (
 
   const mailer = environment === 'dev' ? null : buildMailer(c)
 
-  const res = environment === 'dev' ? null : await mailer!.sendEmail({
-    senderName, content: emailBody, email: receiver, subject,
-  })
+  const res = environment === 'dev'
+    ? null
+    : await mailer!.sendEmail({
+      senderName, content: emailBody, email: receiver, subject,
+    })
 
   if (environment === 'dev') {
     success = true

@@ -1,0 +1,6 @@
+# Logs directory
+# Contains development server logs when using npm start
+
+server.log
+admin.log
+*.log

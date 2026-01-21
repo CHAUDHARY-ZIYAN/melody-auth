@@ -23,53 +23,53 @@ export const fit = () => (
   {
     get: async (key: string) => {
       switch (key) {
-        case adapterConfig.BaseKVKey.JwtPublicSecret:
-          return fs.readFileSync(
-            path.resolve(adapterConfig.FileLocation.NodePublicKey),
+      case adapterConfig.BaseKVKey.JwtPublicSecret:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodePublicKey),
+          'utf8',
+        )
+      case adapterConfig.BaseKVKey.JwtPrivateSecret:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodePrivateKey),
+          'utf8',
+        )
+      case adapterConfig.BaseKVKey.DeprecatedJwtPublicSecret: {
+        const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPublicKey)
+        return fs.existsSync(location)
+          ? fs.readFileSync(
+            location,
             'utf8',
           )
-        case adapterConfig.BaseKVKey.JwtPrivateSecret:
-          return fs.readFileSync(
-            path.resolve(adapterConfig.FileLocation.NodePrivateKey),
+          : null
+      }
+      case adapterConfig.BaseKVKey.DeprecatedJwtPrivateSecret: {
+        const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPrivateKey)
+        return fs.existsSync(location)
+          ? fs.readFileSync(
+            location,
             'utf8',
           )
-        case adapterConfig.BaseKVKey.DeprecatedJwtPublicSecret: {
-          const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPublicKey)
-          return fs.existsSync(location)
-            ? fs.readFileSync(
-              location,
-              'utf8',
-            )
-            : null
-        }
-        case adapterConfig.BaseKVKey.DeprecatedJwtPrivateSecret: {
-          const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPrivateKey)
-          return fs.existsSync(location)
-            ? fs.readFileSync(
-              location,
-              'utf8',
-            )
-            : null
-        }
-        case adapterConfig.BaseKVKey.SessionSecret:
-          return fs.readFileSync(
-            path.resolve('./node_session_secret'),
-            'utf8',
-          )
-        case adapterConfig.BaseKVKey.SamlSpCert:
-          return fs.readFileSync(
-            path.resolve(adapterConfig.FileLocation.NodeSamlSpCert),
-            'utf8',
-          )
-        case adapterConfig.BaseKVKey.SamlSpKey:
-          return fs.readFileSync(
-            path.resolve(adapterConfig.FileLocation.NodeSamlSpKey),
-            'utf8',
-          )
-        default: {
-          const cache = getConnection()
-          return cache.get(key)
-        }
+          : null
+      }
+      case adapterConfig.BaseKVKey.SessionSecret:
+        return fs.readFileSync(
+          path.resolve('./node_session_secret'),
+          'utf8',
+        )
+      case adapterConfig.BaseKVKey.SamlSpCert:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodeSamlSpCert),
+          'utf8',
+        )
+      case adapterConfig.BaseKVKey.SamlSpKey:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodeSamlSpKey),
+          'utf8',
+        )
+      default: {
+        const cache = getConnection()
+        return cache.get(key)
+      }
       }
     },
     put: async (

@@ -13,11 +13,13 @@ COMPANY_EMAIL_LOGO_URL="https://github.com/ziyankhan.png" # be aware that svg fo
 EMAIL_SENDER_NAME="Ziyan Auth"
 TERMS_LINK="" # Display a link to your terms on sign-up page
 PRIVACY_POLICY_LINK="" # Display a link to your privacy policy on sign-up page
+RESEND_SENDER_ADDRESS="khanziyan2019@gmail.com"
+AUTH_SERVER_URL="https://melody-auth.khanziyan2019.workers.dev"
 
 # System
 SUPPORTED_LOCALES=['en', 'fr'] # There is built-in support for zh as well
 ENABLE_LOCALE_SELECTOR=true # If there is only one SUPPORTED_LOCALE, the locale selector will be disabled regardless of this setting.
-# EMAIL_PROVIDER_NAME="" # The name of your email provider. Available options are 'smtp', 'sendgrid', 'mailgun', 'brevo', 'resend', 'postmark'
+EMAIL_PROVIDER_NAME="resend" # The name of your email provider. Available options are 'smtp', 'sendgrid', 'mailgun', 'brevo', 'resend', 'postmark'
 
 # Suppression
 ENABLE_SIGN_UP=true
@@ -25,8 +27,8 @@ ENABLE_PASSWORD_SIGN_IN=true
 ENABLE_PASSWORD_RESET=true # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html
 ENABLE_NAMES=true
 NAMES_IS_REQUIRED=false
-ENABLE_USER_APP_CONSENT=true
-ENABLE_EMAIL_VERIFICATION=true # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html. If true, on user sign-up, the email verification email will be sent.
+ENABLE_USER_APP_CONSENT=false
+ENABLE_EMAIL_VERIFICATION=false # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html. If true, on user sign-up, the email verification email will be sent.
 REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL=false # If both ENABLE_EMAIL_VERIFICATION and REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL are true, on user sign-up, the welcome email will be sent instead of the email verification email.
 ENABLE_ORG=false
 ALLOW_USER_SWITCH_ORG_ON_SIGN_IN=false
@@ -49,7 +51,7 @@ SERVER_SESSION_EXPIRES_IN=1800 # Set to 0 to disable session
 OTP_MFA_IS_REQUIRED=false
 EMAIL_MFA_IS_REQUIRED=false # Please set up your mailer first https://auth.ziyankhan.com/email-provider-setup.html
 SMS_MFA_IS_REQUIRED=false # Please set up your sms provider first https://auth.ziyankhan.com/sms-provider-setup.html
-ENFORCE_ONE_MFA_ENROLLMENT=['otp', 'email'] # Enforce one MFA type from the list. Available options are ‘email’, ‘otp’, and ‘sms’. This setting is only effective if OTP_MFA_IS_REQUIRED, SMS_MFA_IS_REQUIRED, and EMAIL_MFA_IS_REQUIRED are all set to false. An empty list means no MFA type will be enforced. You must enable email functionality for the email MFA option to work.
+ENFORCE_ONE_MFA_ENROLLMENT=[] # Enforce one MFA type from the list. Available options are ‘email’, ‘otp’, and ‘sms’. This setting is only effective if OTP_MFA_IS_REQUIRED, SMS_MFA_IS_REQUIRED, and EMAIL_MFA_IS_REQUIRED are all set to false. An empty list means no MFA type will be enforced. You must enable email functionality for the email MFA option to work.
 ALLOW_EMAIL_MFA_AS_BACKUP=true
 ALLOW_PASSKEY_ENROLLMENT=false
 ENABLE_RECOVERY_CODE=false
@@ -81,12 +83,12 @@ ENABLE_SIGN_IN_LOG=false # Specify whether the user’s sign-in IP (only applica
 
 [[kv_namespaces]]
 binding = "KV"
-id = "7d9be060a7bc48919251b37caa7e1fcd" # Replace with your own KV ID
+id = "1a96f348f3dc4a29afc21ef2b29ca18a" # Replace with your own KV ID
 
 [[d1_databases]]
 binding = "DB"
 database_name = "melody-auth"
-database_id = "8dc67df2-771d-4e73-9c16-d04341b9740e" # Replace with your own D1 ID
+database_id = "86a6f9ed-7a93-45d5-adc8-005c4af2d862" # Replace with your own D1 ID
 migrations_dir = "./migrations/sqlite"
 
 [assets]

@@ -20,7 +20,7 @@ import {
 } from 'react-redux'
 import {
   Building2, ChevronsUpDown, CircleUser, FileCode, Globe, IdCard, LayoutDashboard,
-  ScrollText, Shapes, Tags, UsersRound, Workflow,
+  ScrollText, Shapes, ShieldCheck, Tags, UsersRound, Workflow,
 } from 'lucide-react'
 import useSignalValue from './useSignalValue'
 import { useIsMobile } from '@/hooks/useIsMobile'
@@ -207,12 +207,14 @@ const LayoutSetup = ({ children }: PropsWithChildren) => {
           <SidebarMenu>
             <SidebarMenuItem>
               <div className='flex items-center mt-2'>
-                <img
-                  src='https://avatars.githubusercontent.com/u/12345678?s=200&v=4'
-                  className='mr-3 h-6 rounded-full'
-                />
+                <div className='mr-3 flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10'>
+                  <ShieldCheck className='h-5 w-5 text-primary' />
+                </div>
                 <span className='self-center whitespace-nowrap text-medium font-semibold dark:text-white'>
-                  {t('layout.brand').replace('Melody Auth', 'Ziyan Auth')}
+                  {t('layout.brand').replace(
+                    'Melody Auth',
+                    'Ziyan Auth',
+                  )}
                 </span>
               </div>
             </SidebarMenuItem>

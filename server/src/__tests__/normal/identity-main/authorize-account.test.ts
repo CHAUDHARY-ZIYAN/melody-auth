@@ -154,7 +154,14 @@ describe(
       async () => {
         process.env.ENABLE_USER_APP_CONSENT = false as unknown as string
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -197,7 +204,14 @@ describe(
         process.env.COMPANY_EMAIL_LOGO_URL = 'https://google.com'
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -220,7 +234,14 @@ describe(
         process.env.REPLACE_EMAIL_VERIFICATION_WITH_WELCOME_EMAIL = true as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -242,7 +263,14 @@ describe(
         process.env.ENABLE_ORG = true as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -287,7 +315,14 @@ describe(
         process.env.ENABLE_ORG = true as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -329,7 +364,14 @@ describe(
         process.env.ENABLE_ORG = true as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 

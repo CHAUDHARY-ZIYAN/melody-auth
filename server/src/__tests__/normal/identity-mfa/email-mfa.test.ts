@@ -39,7 +39,14 @@ describe(
       'should send email mfa code',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -83,7 +90,14 @@ describe(
       'could default to supported locale',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -201,7 +215,14 @@ describe(
       'could use original code',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -303,7 +324,14 @@ describe(
       'could use as otp mfa fallback',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -356,7 +384,14 @@ describe(
       'could use as sms mfa fallback',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -413,7 +448,14 @@ describe(
       'could use as fallback for both sms and otp at same time',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -471,7 +513,14 @@ describe(
       'could use as fallback for both sms and otp setup at same time',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -526,7 +575,14 @@ describe(
       'should throw error if auth code is wrong',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -579,7 +635,14 @@ describe(
       'pass through if failed send email',
       async () => {
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: false })
+          return Promise.resolve({
+            ok: false,
+            status: 400,
+            statusText: 'Bad Request',
+            url: '',
+            text: () => Promise.resolve('mock error'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -647,7 +710,14 @@ describe(
         process.env.ENABLE_MFA_REMEMBER_DEVICE = true as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -723,7 +793,14 @@ describe(
         process.env.ENABLE_MFA_REMEMBER_DEVICE = true as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -784,7 +861,14 @@ describe(
         process.env.ENABLE_MFA_REMEMBER_DEVICE = false as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -844,7 +928,14 @@ describe(
         process.env.ENABLE_USER_APP_CONSENT = false as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 
@@ -981,7 +1072,14 @@ describe(
         process.env.ENABLE_USER_APP_CONSENT = false as unknown as string
 
         const mockFetch = vi.fn(async () => {
-          return Promise.resolve({ ok: true })
+          return Promise.resolve({
+            ok: true,
+            status: 200,
+            statusText: 'OK',
+            url: '',
+            text: () => Promise.resolve('mock response'),
+            json: () => Promise.resolve({}),
+          })
         })
         global.fetch = mockFetch as Mock
 

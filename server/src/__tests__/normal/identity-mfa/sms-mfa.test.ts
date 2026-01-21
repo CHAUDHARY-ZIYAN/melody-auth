@@ -211,7 +211,12 @@ describe(
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({
-            ok: false, text: () => {},
+            ok: false,
+            status: 400,
+            statusText: 'Bad Request',
+            url: '',
+            text: () => Promise.resolve(''),
+            json: () => Promise.resolve({}),
           })
         }) as Mock
         global.fetch = mockFetch
@@ -793,7 +798,12 @@ describe(
 
         const mockFetch = vi.fn(async () => {
           return Promise.resolve({
-            ok: false, text: () => null, status: 400,
+            ok: false,
+            status: 400,
+            statusText: 'Bad Request',
+            url: '',
+            text: () => Promise.resolve(''),
+            json: () => Promise.resolve({}),
           })
         }) as Mock
         global.fetch = mockFetch

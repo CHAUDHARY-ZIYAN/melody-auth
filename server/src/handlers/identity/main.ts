@@ -1,4 +1,3 @@
-
 import {
   Context, TypedResponse,
 } from 'hono'

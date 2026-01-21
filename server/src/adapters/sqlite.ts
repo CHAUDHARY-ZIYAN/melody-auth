@@ -5,9 +5,7 @@ export let _db: knex.Knex | null = null
 export const initConnection = () => {
   _db = knex({
     client: 'better-sqlite3',
-    connection: {
-      filename: process.env.SQLITE_FILENAME || './dev.sqlite3',
-    },
+    connection: { filename: process.env.SQLITE_FILENAME || './dev.sqlite3' },
     useNullAsDefault: true,
   })
 }
@@ -43,7 +41,7 @@ export const fit = (currentDb?: knex.Knex) => ({
           prepareQuery,
           params,
         )
-        return { results: results }
+        return { results }
       },
       first: async () => {
         const prepareQuery = convertQuery(
@@ -79,7 +77,7 @@ export const fit = (currentDb?: knex.Knex) => ({
     all: async () => {
       const db = currentDb ?? getConnection()
       const results = await db.raw(query)
-      return { results: results }
+      return { results }
     },
     first: async () => {
       const db = currentDb ?? getConnection()

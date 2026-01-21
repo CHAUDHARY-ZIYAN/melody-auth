@@ -41,48 +41,48 @@ export const session = {
 const kvMock = {
   get: async (key: string) => {
     switch (key) {
-    case adapterConfig.BaseKVKey.JwtPublicSecret:
-      return fs.readFileSync(
-        path.resolve(adapterConfig.FileLocation.NodePublicKey),
-        'utf8',
-      )
-    case adapterConfig.BaseKVKey.JwtPrivateSecret:
-      return fs.readFileSync(
-        path.resolve(adapterConfig.FileLocation.NodePrivateKey),
-        'utf8',
-      )
-    case adapterConfig.BaseKVKey.DeprecatedJwtPublicSecret: {
-      const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPublicKey)
-      return fs.existsSync(location)
-        ? fs.readFileSync(
-          location,
+      case adapterConfig.BaseKVKey.JwtPublicSecret:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodePublicKey),
           'utf8',
         )
-        : null
-    }
-    case adapterConfig.BaseKVKey.DeprecatedJwtPrivateSecret: {
-      const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPrivateKey)
-      return fs.existsSync(location)
-        ? fs.readFileSync(
-          location,
+      case adapterConfig.BaseKVKey.JwtPrivateSecret:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodePrivateKey),
           'utf8',
         )
-        : null
-    }
-    case adapterConfig.BaseKVKey.SamlSpCert:
-      return fs.readFileSync(
-        path.resolve(adapterConfig.FileLocation.NodeSamlSpCert),
-        'utf8',
-      )
-    case adapterConfig.BaseKVKey.SamlSpKey:
-      return fs.readFileSync(
-        path.resolve(adapterConfig.FileLocation.NodeSamlSpKey),
-        'utf8',
-      )
-    case adapterConfig.BaseKVKey.SessionSecret:
-      return 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-    default:
-      return kv[key] ?? null
+      case adapterConfig.BaseKVKey.DeprecatedJwtPublicSecret: {
+        const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPublicKey)
+        return fs.existsSync(location)
+          ? fs.readFileSync(
+            location,
+            'utf8',
+          )
+          : null
+      }
+      case adapterConfig.BaseKVKey.DeprecatedJwtPrivateSecret: {
+        const location = path.resolve(adapterConfig.FileLocation.NodeDeprecatedPrivateKey)
+        return fs.existsSync(location)
+          ? fs.readFileSync(
+            location,
+            'utf8',
+          )
+          : null
+      }
+      case adapterConfig.BaseKVKey.SamlSpCert:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodeSamlSpCert),
+          'utf8',
+        )
+      case adapterConfig.BaseKVKey.SamlSpKey:
+        return fs.readFileSync(
+          path.resolve(adapterConfig.FileLocation.NodeSamlSpKey),
+          'utf8',
+        )
+      case adapterConfig.BaseKVKey.SessionSecret:
+        return 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+      default:
+        return kv[key] ?? null
     }
   },
   put: (
@@ -93,7 +93,7 @@ const kvMock = {
   delete: (key: string) => {
     delete kv[key]
   },
-  list: ({ prefix }: { prefix: string}) => {
+  list: ({ prefix }: { prefix: string }) => {
     const keys = Object.keys(kv)
     return {
       keys: keys.filter((key) => key.includes(prefix))
@@ -302,7 +302,7 @@ export const migrate = async () => {
 
 export const emailResponseMock = vi.fn(async () => {
   return Promise.resolve({
-    ok: true, text: () => {}, status: 200, statusText: 'test',
+    ok: true, text: () => { }, status: 200, statusText: 'test',
   })
 })
 
@@ -319,7 +319,7 @@ export const emailLogRecord = {
 
 export const getSmsResponseMock = () => vi.fn(async () => {
   return Promise.resolve({
-    ok: true, text: () => 'test response', status: 200,
+    ok: true, text: () => Promise.resolve('test response'), status: 200,
   })
 }) as Mock
 
@@ -339,7 +339,14 @@ export const fetchMock = vi.fn(async (url) => {
       }),
     })
   }
-  return Promise.resolve({ ok: true })
+  return Promise.resolve({
+    ok: true,
+    status: 200,
+    statusText: 'OK',
+    url: String(url),
+    text: () => Promise.resolve('mock response'),
+    json: () => Promise.resolve({}),
+  })
 }) as Mock
 
 export const passkeyEnrollMock = {
